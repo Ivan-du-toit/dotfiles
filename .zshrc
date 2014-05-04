@@ -51,12 +51,23 @@ plugins=(git jump)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/scripts/zsh/alias.sh
+source ~/dotfiles/alias.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
+export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# compsys initialization
+autoload -U compinit
+compinit
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
+
+# auto complete open which disconnects stout from terminal (Silences noisy progs)
+compdef _sudo open
+function open { $1 &> /dev/null & }
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -77,3 +88,6 @@ export GOBIN=/usr/local/go/bin
 export PATH=$PATH:$GOBIN
 
 export PORT=8080
+source "$HOME/.rvm/scripts/rvm"
+
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
