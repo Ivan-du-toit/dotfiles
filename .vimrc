@@ -5,7 +5,7 @@ set expandtab
 set sw=4
 set sts=4
 set tabstop=4    " Set the default tabstop
-set smarttab " Smarter tab levels
+"set smarttab " Smarter tab levels
 
 set nocompatible
 set encoding=utf-8
@@ -15,6 +15,8 @@ set ignorecase  " Do case in sensitive matching with
 set smartcase
 set incsearch
 set wrapscan
+set autoread " reload files when they change
+
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
@@ -39,7 +41,7 @@ set backspace=indent,eol,start
 
 " When opening a new line and no filetype-specific indenting is enabled, keep
 " the same indent as the line you're currently on. Useful for READMEs, etc.
-set autoindent
+"set autoindent
 
 " Display the cursor position on the last line of the screen or in the status
 " line of a window
@@ -59,7 +61,7 @@ set visualbell
 
 set wrap
 set linebreak
-set nolist
+set list " show trailing whitespace
 set textwidth=0
 set wrapmargin=0
 " indent wrapped lines
@@ -99,7 +101,9 @@ syntax on
     Bundle 'scrooloose/nerdtree.git'
     Bundle 'jistr/vim-nerdtree-tabs'
     Bundle 'Blackrush/vim-gocode'
+    Bundle 'fatih/vim-go'
     Bundle "myusuf3/numbers.vim"
+    Plugin 'airblade/vim-gitgutter'
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -110,5 +114,15 @@ syntax on
 color 256-jungle
 color Monokai
 
+" Set shortcuts
+
+"Toggle NerdTree
 map <C-n> :NERDTreeMirrorToggle<CR>
 inoremap <Nul> <C-n>
+
+if &term =~ '256color'
+    " disable Background Color Erase (BCE) so that color schemes
+    " render properly when inside 256-color tmux and GNU screen.
+    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
+    set t_ut=
+endif

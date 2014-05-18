@@ -7,3 +7,4 @@ alias gst="git status"
 alias gpr="git pull --rebase"
 alias gd="git diff"
 
+alias mux="tmux -2 attach"
