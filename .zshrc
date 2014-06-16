@@ -91,3 +91,9 @@ export PORT=8080
 source "$HOME/.rvm/scripts/rvm"
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+
+#Fix the color support
+export TERM=xterm-256color
