@@ -5,7 +5,6 @@ set expandtab
 set sw=4
 set sts=4
 set tabstop=4    " Set the default tabstop
-"set smarttab " Smarter tab levels
 
 set nocompatible
 set encoding=utf-8
@@ -15,12 +14,9 @@ set ignorecase  " Do case in sensitive matching with
 set smartcase
 set incsearch
 set wrapscan
-set autoread " reload files when they change
-
 
 " One of the most important options to activate. Allows you to switch from an
 " unsaved buffer without saving it first. Also allows you to keep an undo
-set term=screen-256color
 " history for multiple files. Vim will complain if you try to quit without
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
@@ -55,14 +51,10 @@ set laststatus=2
 " dialogue asking if you wish to save changed files.
 set confirm
 
-" Use visual bell instead of beeping when doing something wrong
-set visualbell
-
 " wrap, but only in the display, not in the file
-
 set wrap
 set linebreak
-set list " show trailing whitespace
+set nolist
 set textwidth=0
 set wrapmargin=0
 " indent wrapped lines
@@ -75,10 +67,7 @@ filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
-
 syntax on
-
-
 
 "setting up Vundle - the vim plugin bundler
     let iCanHazVundle=1
@@ -94,17 +83,15 @@ syntax on
     call vundle#rc()
     Bundle 'gmarik/vundle'
     "Add your bundles here
-    
-    Bundle 'Syntastic' 
+
+    Bundle 'Syntastic'
     Bundle 'altercation/vim-colors-solarized'
-    Bundle 'https://github.com/tpope/vim-fugitive' 
+    Bundle 'https://github.com/tpope/vim-fugitive'
     Bundle 'flazz/vim-colorschemes'
     Bundle 'scrooloose/nerdtree.git'
     Bundle 'jistr/vim-nerdtree-tabs'
-    Bundle 'Blackrush/vim-gocode'
-    Bundle 'fatih/vim-go'
-    Bundle "myusuf3/numbers.vim"
-    Plugin 'airblade/vim-gitgutter'
+    Bundle 'https://github.com/vim-scripts/YankRing.vim'
+    Bundle 'ntpeters/vim-better-whitespace'
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
         echo ""
@@ -114,16 +101,6 @@ syntax on
 
 color 256-jungle
 color Monokai
+set t_ut=
 
-" Set shortcuts
-
-"Toggle NerdTree
 map <C-n> :NERDTreeMirrorToggle<CR>
-inoremap <Nul> <C-n>
-
-if &term =~ '256color'
-    " disable Background Color Erase (BCE) so that color schemes
-    " render properly when inside 256-color tmux and GNU screen.
-    " see also http://snk.tuxfamily.org/log/vim-256color-bce.html
-    set t_ut=
-endif

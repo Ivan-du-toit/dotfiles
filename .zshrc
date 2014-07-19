@@ -5,9 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="xiong-chiamiov-plus"  #To much blue
-#ZSH_THEME="random"
-ZSH_THEME="jonathan"
+ZSH_THEME="xiong-chiamiov-plus"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -42,15 +40,16 @@ ZSH_THEME="jonathan"
 # Uncomment following line if you want to  shown in the command execution time stamp 
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
-HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git jump)
+plugins=(git git-extras jump history history-substring-search ruby gem autojump lol npm nyan pip python rails3 rvm sudo terminator tmux tmuxinator)
 
 source $ZSH/oh-my-zsh.sh
 
+source ~/dotfiles/zsh.settings.sh
 source ~/dotfiles/alias.sh
 
 # User configuration
@@ -79,21 +78,12 @@ function open { $1 &> /dev/null & }
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/gosrc
 export GOBIN=/usr/local/go/bin
 export PATH=$PATH:$GOBIN
 
-export PORT=8080
-source "$HOME/.rvm/scripts/rvm"
+export TERM=xterm-256color
 
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-
-#Fix the color support
-export TERM=xterm-256color
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
