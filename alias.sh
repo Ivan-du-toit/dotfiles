@@ -17,3 +17,5 @@ alias gld="git lg"
 alias mux="tmux -2 attach"
 alias ta="tmux a -t"
 alias tls="tmux ls"
+
+alias szsh="source ~/.zshrc"

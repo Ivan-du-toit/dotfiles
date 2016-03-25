@@ -45,17 +45,13 @@ HIST_STAMPS="dd/mm/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras jump history history-substring-search ruby gem autojump lol npm nyan pip python rails3 rvm sudo terminator tmux tmuxinator)
+plugins=(git git-extras jump history history-substring-search ruby gem autojump npm pip python rails3 rvm sudo)
 
 source $ZSH/oh-my-zsh.sh
 
 source ~/dotfiles/zsh.settings.sh
-source ~/dotfiles/alias.sh
 
 # User configuration
-
-export PATH="$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games"
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # compsys initialization
 autoload -U compinit
@@ -64,26 +60,19 @@ compinit
 # show completion menu when number of options is at least 2
 zstyle ':completion:*' menu select=2
 
-# auto complete open which disconnects stout from terminal (Silences noisy progs)
-compdef _sudo open
-function open { $1 &> /dev/null & }
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/gosrc
-export GOBIN=/usr/local/go/bin
-export PATH=$PATH:$GOBIN
-
 export TERM=xterm-256color
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[ -s "/Users/ivantoit/.scm_breeze/scm_breeze.sh" ] && source "/Users/ivantoit/.scm_breeze/scm_breeze.sh"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+#Fix python chrash when opening VIM
+export DYLD_FORCE_FLAT_NAMESPACE=1
+
+source ~/dotfiles/alias.sh
