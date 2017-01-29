@@ -45,7 +45,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras jump history history-substring-search ruby gem autojump npm pip python rails3 rvm sudo)
+plugins=(git git-extras jump history history-substring-search ruby gem autojump npm pip python rails3 rvm sudo zsh-autosuggestions common-aliases compleat dirhistory osx sbt)
 
 source $ZSH/oh-my-zsh.sh
 
