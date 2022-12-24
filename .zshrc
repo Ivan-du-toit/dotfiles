@@ -45,11 +45,11 @@ HIST_STAMPS="dd/mm/yyyy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras jump history history-substring-search ruby gem autojump npm pip python rails3 rvm sudo zsh-autosuggestions common-aliases compleat dirhistory osx sbt)
+Alugins=(git git-extras jump history history-substring-search autojump npm pip python rails3 sudo zsh-autosuggestions common-aliases compleat dirhistory)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/dotfiles/zsh.settings.sh
+# source ~/projects/dotfiles/zsh.settings.sh
 
 # User configuration
 
@@ -67,7 +67,7 @@ export EDITOR='vim'
 
 export TERM=xterm-256color
 
-[ -s "/Users/ivantoit/.scm_breeze/scm_breeze.sh" ] && source "/Users/ivantoit/.scm_breeze/scm_breeze.sh"
+source "/home/ivantoit/.scm_breeze/scm_breeze.sh"
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -75,4 +75,6 @@ export LANG=en_US.UTF-8
 #Fix python chrash when opening VIM
 export DYLD_FORCE_FLAT_NAMESPACE=1
 
-source ~/dotfiles/alias.sh
+source ~/projects/dotfiles/alias.sh
+source /usr/share/autojump/autojump.zsh
+

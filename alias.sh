@@ -1,10 +1,8 @@
 alias cls=clear
-alias chr="open chromium-browser"
-alias ebook="open calibre"
 
 
 #Git short commands
-alias gst="git status"
+alias gs="git status"
 alias gpr="git pull --rebase"
 alias gd="git diff"
 alias gc="git commit"

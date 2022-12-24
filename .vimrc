@@ -169,7 +169,6 @@ syntax on
     "Add your bundles here
 
     Bundle 'Syntastic'
-    Bundle 'altercation/vim-colors-solarized'
     Bundle 'https://github.com/tpope/vim-fugitive'
     Bundle 'flazz/vim-colorschemes'
     Bundle 'scrooloose/nerdtree.git'
@@ -181,9 +180,10 @@ syntax on
     Plugin 'mattn/emmet-vim'
 "    Plugin 'Shougo/neocomplcache.vim'
     Bundle 'pangloss/vim-javascript'
-    Plugin 'fatih/vim-go'
+"    Plugin 'fatih/vim-go'
     Plugin 'majutsushi/tagbar'
     Plugin 'honza/vim-snippets'
+    Plugin 'joshdick/onedark.vim'
     Plugin 'elzr/vim-json'
     Plugin 'myusuf3/numbers.vim'
     Plugin 'sudo.vim'
@@ -198,7 +198,7 @@ syntax on
     endif
 " Setting up Vundle - the vim plugin bundler end
 
-color dark-ruby
+colorscheme onedark
 set t_ut=
 
 nmap <leader>n :NERDTreeMirrorToggle<CR>
