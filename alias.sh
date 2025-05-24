@@ -1,5 +1,7 @@
 alias cls=clear
 
+alias vim=nvim
+
 
 #Git short commands
 alias gs="git status"

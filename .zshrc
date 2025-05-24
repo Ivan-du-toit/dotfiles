@@ -49,8 +49,6 @@ Alugins=(git git-extras jump history history-substring-search autojump npm pip p
 
 source $ZSH/oh-my-zsh.sh
 
-# source ~/projects/dotfiles/zsh.settings.sh
-
 # User configuration
 
 # compsys initialization
@@ -67,14 +65,14 @@ export EDITOR='vim'
 
 export TERM=xterm-256color
 
-source "/home/ivantoit/.scm_breeze/scm_breeze.sh"
-
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 #Fix python chrash when opening VIM
 export DYLD_FORCE_FLAT_NAMESPACE=1
 
-source ~/projects/dotfiles/alias.sh
+source ~/dotfiles/alias.sh
 source /usr/share/autojump/autojump.zsh
 
+
+[ -s "~/.scm_breeze/scm_breeze.sh" ] && source "~/.scm_breeze/scm_breeze.sh"
